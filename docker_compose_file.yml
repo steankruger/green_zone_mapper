@@ -19,8 +19,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_DB: geoserver
+      POSTGRES_USER: stean_kruger
+      POSTGRES_DB: geoserver_db
       POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - postgres:/var/lib/postgresql/data
@@ -37,9 +37,9 @@ services:
       timeout: 10s
       retries: 120
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: stean_kruger
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: geostore
+      POSTGRES_DB: mapstore_db
     volumes:
     - mapstore_pg_data:${PGDATA:-/var/lib/postgresql/data}:rw
     ports:
